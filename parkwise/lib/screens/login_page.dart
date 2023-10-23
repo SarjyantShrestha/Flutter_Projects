@@ -129,18 +129,13 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 50),
                     SizedBox(
                       width: 100,
-                      child: OutlinedButton(
+                      child: ElevatedButton(
                         onPressed: () {
-                          // Handle login logic here
+                          // Handle registration logic here
                         },
                         style: ButtonStyle(
-                          side: MaterialStateProperty.resolveWith<BorderSide>(
-                            (Set<MaterialState> states) {
-                              return const BorderSide(
-                                  color: Color.fromRGBO(44, 116, 179, 1),
-                                  width: 1.0);
-                            },
-                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.blue),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
@@ -153,6 +148,30 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
+                      // OutlinedButton(
+                      //   onPressed: () {
+                      //     // Handle login logic here
+                      //   },
+                      //   style: ButtonStyle(
+                      //     side: MaterialStateProperty.resolveWith<BorderSide>(
+                      //       (Set<MaterialState> states) {
+                      //         return const BorderSide(
+                      //             color: Color.fromRGBO(44, 116, 179, 1),
+                      //             width: 1.0);
+                      //       },
+                      //     ),
+                      //     shape:
+                      //         MaterialStateProperty.all<RoundedRectangleBorder>(
+                      //       RoundedRectangleBorder(
+                      //         borderRadius: BorderRadius.circular(10),
+                      //       ),
+                      //     ),
+                      //   ),
+                      //   child: const Text(
+                      //     'Login',
+                      //     style: TextStyle(color: Colors.white),
+                      //   ),
+                      // ),
                     ),
                     const SizedBox(height: 20),
                     OutlinedButton(

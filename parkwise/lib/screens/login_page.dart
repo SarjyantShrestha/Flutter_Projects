@@ -176,11 +176,7 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     OutlinedButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const RegistrationPage(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/register');
                       },
                       style: ButtonStyle(
                         side: MaterialStateProperty.resolveWith<BorderSide>(

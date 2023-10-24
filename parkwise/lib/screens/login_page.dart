@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './registration.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -92,6 +91,7 @@ class LoginPage extends StatelessWidget {
                           hintStyle: TextStyle(color: Colors.grey),
                           border: InputBorder.none,
                         ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -114,6 +114,7 @@ class LoginPage extends StatelessWidget {
                           hintStyle: TextStyle(color: Colors.grey),
                           border: InputBorder.none,
                         ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     const Align(

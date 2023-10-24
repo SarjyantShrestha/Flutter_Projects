@@ -9,6 +9,11 @@
 .history
 .svn/
 migrate_working_dir/
+flipcoin/
+parkwise.zip
+personality_test/
+project/
+quiz_app.zip
 
 # IntelliJ related
 *.iml

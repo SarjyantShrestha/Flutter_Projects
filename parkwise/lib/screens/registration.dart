@@ -84,6 +84,7 @@ class RegistrationPage extends StatelessWidget {
                         // ],
                       ),
                       child: const TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
                           hintText: "Password",
                           hintStyle: TextStyle(color: Colors.grey),

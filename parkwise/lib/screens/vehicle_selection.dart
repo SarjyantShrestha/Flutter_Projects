@@ -48,8 +48,7 @@ class VehicleSelect extends StatelessWidget {
                 ),
                 const Text(
                   'Choose your ride below',
-                  style: TextStyle(color: Colors.white,
-                  fontSize: 20),
+                  style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 const SizedBox(
                   height: 50,
@@ -62,7 +61,7 @@ class VehicleSelect extends StatelessWidget {
                       width: 150,
                       child: ElevatedButton.icon(
                         onPressed: () {
-
+                          Navigator.pushNamed(context, '/mapScreen');
                         },
                         icon: Image.asset(
                           'images/Bike1.png',
@@ -95,7 +94,7 @@ class VehicleSelect extends StatelessWidget {
                       width: 150,
                       child: ElevatedButton.icon(
                         onPressed: () {
-
+                          Navigator.pushNamed(context, '/mapScreen2');
                         },
                         icon: Image.asset(
                           'images/Car1.png',

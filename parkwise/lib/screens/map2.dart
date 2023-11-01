@@ -1,6 +1,4 @@
-// import 'dart:async';
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
@@ -15,17 +13,19 @@ class MapScreen2 extends StatefulWidget {
 }
 
 class MapScreen2State extends State<MapScreen2> {
+  //FAB navigate back to user location
   late FollowOnLocationUpdate _followOnLocationUpdate;
   late StreamController<double?> _followCurrentLocationStreamController;
 
   @override
   void initState() {
+    //FAB navigate back to user location
     super.initState();
     _followOnLocationUpdate = FollowOnLocationUpdate.always;
     _followCurrentLocationStreamController = StreamController<double?>();
   }
 
-  @override
+  @override //FAB navigate back to user locatione
   void dispose() {
     _followCurrentLocationStreamController.close();
     super.dispose();
@@ -107,7 +107,6 @@ class MapScreen2State extends State<MapScreen2> {
                 TileLayer(
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-                  // Plenty of other options available!
                 ),
                 CurrentLocationLayer(
                   followCurrentLocationStream:
@@ -122,10 +121,12 @@ class MapScreen2State extends State<MapScreen2> {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.bottomRight,
+                  //FAB navigate back to user location
+                  alignment: const Alignment(0, 0.9),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: FloatingActionButton(
+                      shape: const CircleBorder(),
                       backgroundColor: Colors.black54,
                       onPressed: () {
                         // Follow the location marker on the map when location updated until user interact with the map.

@@ -2,28 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:parkwise/screens/floating_search_bar.dart';
 
-class MapScreen extends StatelessWidget {
+class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    MapController mapController = MapController.withUserPosition(
-      trackUserLocation: const UserTrackingOption(
-        enableTracking: true,
-        unFollowUser: false,
-      ),
-    );
+  State<MapScreen> createState() => _MapScreenState();
+}
 
+class _MapScreenState extends State<MapScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final mapController = MapController.withUserPosition(
+        trackUserLocation: const UserTrackingOption(
+      enableTracking: true,
+      unFollowUser: true,
+    ));
     return Scaffold(
       body: Stack(
         children: [
           OSMFlutter(
             controller: mapController,
             osmOption: OSMOption(
-              userTrackingOption: const UserTrackingOption(
-                enableTracking: false,
-                unFollowUser: true,
-              ),
               zoomOption: const ZoomOption(
                 initZoom: 20,
                 minZoomLevel: 3,

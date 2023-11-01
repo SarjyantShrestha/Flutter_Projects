@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
-import 'package:parkwise/screens/floating_search_bar.dart';
+// import 'package:parkwise/screens/floating_search_bar.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -12,11 +12,13 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
-    final mapController = MapController.withUserPosition(
-        trackUserLocation: const UserTrackingOption(
-      enableTracking: true,
-      unFollowUser: true,
-    ));
+    MapController mapController = MapController.withUserPosition(
+      trackUserLocation: const UserTrackingOption(
+        enableTracking: true,
+        unFollowUser: true,
+      ),
+    );
+
     return Scaffold(
       body: Stack(
         children: [
@@ -59,7 +61,8 @@ class _MapScreenState extends State<MapScreen> {
               // ),
             ),
           ),
-          buildFloatingSearchBar(context),
+          // buildFloatingSearchBar(context), //FEATURE DISABLED FOR NOW
+          // Custom marker at Kathmandu location
         ],
       ),
     );

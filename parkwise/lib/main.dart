@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parkwise/screens/map.dart';
+// import 'package:parkwise/screens/map.dart';
 import 'package:parkwise/screens/map2.dart';
 import './screens/login_page.dart';
 import './screens/registration.dart';

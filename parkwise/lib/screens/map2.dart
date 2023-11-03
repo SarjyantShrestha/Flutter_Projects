@@ -31,6 +31,7 @@ class MapScreen2State extends State<MapScreen2> {
     super.dispose();
   }
 
+  List<Marker> locationMarker = [];
   var marker = <Marker>[
     Marker(
       point: const LatLng(27.6710, 85.4298),
@@ -92,6 +93,23 @@ class MapScreen2State extends State<MapScreen2> {
               mapController: MapController(),
               options: MapOptions(
                 initialZoom: 17,
+                onTap: (tapPosition, point) {
+                  setState(
+                    () {
+                      locationMarker.clear();
+                      locationMarker.add(
+                        Marker(
+                          point: point,
+                          child: const Icon(
+                            Icons.location_on_sharp,
+                            color: Color.fromRGBO(234, 13, 64, 1),
+                            size: 40,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
                 // Stop following the location marker on the map if user interacted with the map.
                 onPositionChanged: (MapPosition position, bool hasGesture) {
                   if (hasGesture &&
@@ -116,8 +134,8 @@ class MapScreen2State extends State<MapScreen2> {
                   style: const LocationMarkerStyle(
                     marker: DefaultLocationMarker(),
                     markerDirection: MarkerDirection.heading,
-                    markerSize: Size.square(35),
-                    headingSectorRadius: 90,
+                    markerSize: Size.square(20),
+                    headingSectorRadius: 50,
                   ),
                 ),
                 Align(
@@ -134,7 +152,7 @@ class MapScreen2State extends State<MapScreen2> {
                           () => _followOnLocationUpdate =
                               FollowOnLocationUpdate.always,
                         );
-                        // Follow the location marker on the map and zoom the map to level 18.
+                        // Follow the location marker on the map and zoom the map to level.
                         _followCurrentLocationStreamController.add(17);
                       },
                       child: const Icon(
@@ -145,7 +163,7 @@ class MapScreen2State extends State<MapScreen2> {
                   ),
                 ),
                 MarkerLayer(
-                  markers: marker,
+                  markers: locationMarker,
                   rotate: true,
                 ),
               ],
